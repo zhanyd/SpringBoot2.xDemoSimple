@@ -2,7 +2,7 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 
 <generatorConfiguration>
-	<classPathEntry location="C:/Users/Administrator/.m2/repository/mysql/mysql-connector-java/5.1.44/mysql-connector-java-5.1.44.jar" />
+	<classPathEntry location="C:/Users/Administrator/.m2/repository/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13.jar" />
 
 	<context id="context" targetRuntime="MyBatis3" >
 		<commentGenerator>
@@ -11,8 +11,8 @@
 			<property name="addRemarkComments" value="false" />
 			<property name="javaFileEncoding" value="UTF-8" />
 		</commentGenerator>
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver" 
-			connectionURL="jdbc:mysql://localhost:3306/zhanyd?serverTimezone=UTC&amp;useSSL=false" userId="root" password="root"></jdbcConnection>
+		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver" 
+			connectionURL="jdbc:mysql://localhost:3306/canaan_reports?serverTimezone=UTC&amp;useSSL=false" userId="root" password="root"></jdbcConnection>
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
@@ -20,10 +20,10 @@
 		<sqlMapGenerator targetPackage="com.zhanyd.app.mapping" targetProject="MAVEN"/>
 		<javaClientGenerator targetPackage="com.zhanyd.app.mapper" targetProject="MAVEN" type="XMLMAPPER" />
 
-		<table tableName="role_info" domainObjectName="RoleInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
-		<table tableName="user_info" domainObjectName="UserInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
+		<table tableName="plan_complete" domainObjectName="PlanComplete" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
+		<!-- <table tableName="user_info" domainObjectName="UserInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
 		<table tableName="user_role" domainObjectName="UserRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
-		<table tableName="identifying_code" domainObjectName="IdentifyingCode" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
+		<table tableName="identifying_code" domainObjectName="IdentifyingCode" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/> -->
       
 	</context>
 </generatorConfiguration>
