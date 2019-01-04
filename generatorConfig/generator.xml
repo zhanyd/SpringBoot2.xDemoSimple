@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+
+<generatorConfiguration>
+	<classPathEntry location="C:/Users/Administrator/.m2/repository/mysql/mysql-connector-java/5.1.44/mysql-connector-java-5.1.44.jar" />
+
+	<context id="context" targetRuntime="MyBatis3" >
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+			<property name="suppressDate" value="true" />
+			<property name="addRemarkComments" value="false" />
+			<property name="javaFileEncoding" value="UTF-8" />
+		</commentGenerator>
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver" 
+			connectionURL="jdbc:mysql://localhost:3306/zhanyd?serverTimezone=UTC&amp;useSSL=false" userId="root" password="root"></jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<javaModelGenerator targetPackage="com.zhanyd.app.model" targetProject="MAVEN" />
+		<sqlMapGenerator targetPackage="com.zhanyd.app.mapping" targetProject="MAVEN"/>
+		<javaClientGenerator targetPackage="com.zhanyd.app.mapper" targetProject="MAVEN" type="XMLMAPPER" />
+
+		<table tableName="role_info" domainObjectName="RoleInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
+		<table tableName="user_info" domainObjectName="UserInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
+		<table tableName="user_role" domainObjectName="UserRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
+		<table tableName="identifying_code" domainObjectName="IdentifyingCode" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
+      
+	</context>
+</generatorConfiguration>

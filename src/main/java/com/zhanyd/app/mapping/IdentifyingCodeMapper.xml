@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhanyd.app.mapper.IdentifyingCodeMapper">
+  <resultMap id="BaseResultMap" type="com.zhanyd.app.model.IdentifyingCode">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="identifying_code" jdbcType="VARCHAR" property="identifyingCode" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="valid_time" jdbcType="INTEGER" property="validTime" />
+    <result column="is_valid" jdbcType="BIT" property="isValid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, tel, identifying_code, content, valid_time, is_valid, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from identifying_code
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from identifying_code
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zhanyd.app.model.IdentifyingCode">
+    insert into identifying_code (id, tel, identifying_code, 
+      content, valid_time, is_valid, 
+      create_time)
+    values (#{id,jdbcType=INTEGER}, #{tel,jdbcType=VARCHAR}, #{identifyingCode,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{validTime,jdbcType=INTEGER}, #{isValid,jdbcType=BIT}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhanyd.app.model.IdentifyingCode">
+    insert into identifying_code
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="tel != null">
+        tel,
+      </if>
+      <if test="identifyingCode != null">
+        identifying_code,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="validTime != null">
+        valid_time,
+      </if>
+      <if test="isValid != null">
+        is_valid,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyingCode != null">
+        #{identifyingCode,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="validTime != null">
+        #{validTime,jdbcType=INTEGER},
+      </if>
+      <if test="isValid != null">
+        #{isValid,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhanyd.app.model.IdentifyingCode">
+    update identifying_code
+    <set>
+      <if test="tel != null">
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="identifyingCode != null">
+        identifying_code = #{identifyingCode,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="validTime != null">
+        valid_time = #{validTime,jdbcType=INTEGER},
+      </if>
+      <if test="isValid != null">
+        is_valid = #{isValid,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhanyd.app.model.IdentifyingCode">
+    update identifying_code
+    set tel = #{tel,jdbcType=VARCHAR},
+      identifying_code = #{identifyingCode,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      valid_time = #{validTime,jdbcType=INTEGER},
+      is_valid = #{isValid,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

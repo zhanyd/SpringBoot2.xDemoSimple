@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhanyd.app.mapper.IdentifyingCodeMapper">
+	 <select id="selectByParam" parameterType="map" resultType="map">
+        select
+        <include refid="Base_Column_List" />
+        from identifying_code
+        where is_valid = 1
+            <if test="tel != null and tel != ''">
+                and tel = #{tel}
+            </if>
+            <if test="identifyingCode != null and identifyingCode != ''">
+                and identifying_code = #{identifyingCode}
+            </if>
+
+    </select>
+
+
+    <select id="checkIdentifyingCode" parameterType="map" resultType="Integer">
+        select count(1) from identifying_code
+        where is_valid = 1
+        and date_add(create_time, INTERVAL valid_time SECOND) > now()
+        and tel = #{tel}
+        and identifying_code = #{identifyingCode}
+    </select>
+
+    <select id="getTimeSpanFromNow" parameterType="map" resultType="Integer">
+        select ifnull(min(NOW() - create_time),999999) from identifying_code t
+        where to_days(create_time) = to_days(now())
+        <if test="tel != null and tel != ''">
+            and tel = #{tel}
+        </if>
+    </select>
+
+    <select id="selectTodaySendCount" parameterType="String" resultType="Integer">
+        select count(1) from identifying_code
+        where to_days(create_time) = to_days(now())
+        and tel = #{tel}
+    </select>
+</mapper>
