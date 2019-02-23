@@ -2,7 +2,8 @@ package com.zhanyd.app.common;
 
 public enum ResultEnum {
     SUCCESS(200, "success"),
-    SERVER_ERROR(500, "server error");
+    SERVER_ERROR(500, "server error"),
+	TOKEN_EXPIRED(501, "Token has expired");
 
     private int code;
     private String message;

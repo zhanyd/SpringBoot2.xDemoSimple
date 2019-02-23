@@ -36,6 +36,13 @@ public class ApiResult<T> {
 		this.data = data;
 		return this;
 	}
+	
+	public ApiResult<T> tokenExpired(T data){
+		this.code = ResultEnum.TOKEN_EXPIRED.getCode();
+		this.message = ResultEnum.TOKEN_EXPIRED.getMessage();
+		this.data = data;
+		return this;
+	}
 
 	public int getCode() {
 		return code;

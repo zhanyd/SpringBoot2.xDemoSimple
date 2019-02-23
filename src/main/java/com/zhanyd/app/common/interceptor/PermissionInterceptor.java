@@ -62,7 +62,7 @@ public class PermissionInterceptor implements HandlerInterceptor {
     private void responseMessage(HttpServletResponse response,String msg) throws IOException
     {
         ApiResult<String> apiResult = new ApiResult<String>();
-        String message = JSON.toJSONString(apiResult.fail(msg));
+        String message = JSON.toJSONString(apiResult.tokenExpired(msg));
         response.setHeader("Content-type", "application/json");
         OutputStream stream = response.getOutputStream();
         stream.write(message.getBytes("UTF-8"));

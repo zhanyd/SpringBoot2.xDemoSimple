@@ -22,6 +22,12 @@ spring:
         testOnReturn: false
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
+    servlet:
+        multipart:
+            max-file-size: 500MB   
+            max-request-size: 1000MB
+    jackson:
+        time-zone: GMT+8 #不然返回客户端会少8小时
 mybatis:
   mapper-locations: classpath:com/zhanyd/app/mapping/*.xml
   type-aliases-package: com.zhanyd.app.model
