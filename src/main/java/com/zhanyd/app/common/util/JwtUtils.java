@@ -7,11 +7,14 @@ import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
 
 
 /**
@@ -71,6 +74,16 @@ public class JwtUtils {
             logger.error(exception.getMessage());
         }
         return null;
+    }
+    
+    /**
+     * 获取用户id
+     * @param request
+     * @return
+     */
+    public static String getUserId(HttpServletRequest request) {
+    	String token = request.getHeader("Authorization");
+		return StringHelp.valueOf(JwtUtils.verifyJWT(token));
     }
 
     public static void main(String[] args){

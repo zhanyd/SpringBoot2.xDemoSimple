@@ -11,6 +11,12 @@ public class ApiResult<T> {
 		
 	}
 	
+	public ApiResult(int code,String message,T data){
+		this.code = code;
+		this.message = message;
+		this.data = data;
+	}
+	
 	public ApiResult(ResultEnum resultEnum) {
 		this.code = resultEnum.getCode();
 		this.message = resultEnum.getMessage();
