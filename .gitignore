@@ -27,3 +27,6 @@ bin/
 .project
 .classpath
 *.iml
+.idea/
+.idea/*.xml
+.DS_Store
