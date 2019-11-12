@@ -11,7 +11,7 @@ public class ApiResult<T> {
 		
 	}
 	
-	public ApiResult(int code,String message,T data){
+	public ApiResult(int code, String message, T data){
 		this.code = code;
 		this.message = message;
 		this.data = data;
@@ -35,6 +35,12 @@ public class ApiResult<T> {
 		this.data = data;
 		return this;
 	}
+
+	public ApiResult<T> success() {
+		this.code = ResultEnum.SUCCESS.getCode();
+		this.message = ResultEnum.SUCCESS.getMessage();
+		return this;
+	}
 	
 	public ApiResult<T> fail(T data){
 		this.code = ResultEnum.SERVER_ERROR.getCode();
@@ -47,6 +53,12 @@ public class ApiResult<T> {
 		this.code = ResultEnum.TOKEN_EXPIRED.getCode();
 		this.message = ResultEnum.TOKEN_EXPIRED.getMessage();
 		this.data = data;
+		return this;
+	}
+
+	public ApiResult parameterFail(String message) {
+		this.code = ResultEnum.PARAMETER_ERROR.getCode();
+		this.message = message;
 		return this;
 	}
 

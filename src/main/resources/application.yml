@@ -3,7 +3,7 @@ server:
 
 spring:
     datasource:
-        jdbc-url: jdbc:mysql://localhost:3306/canaan_assets_management?serverTimezone=Asia/Shanghai&useSSL=false
+        url: jdbc:mysql://localhost:3306/canaan_assets_management?serverTimezone=Asia/Shanghai&useSSL=false
         username: root
         password: root
         # 使用druid数据源
