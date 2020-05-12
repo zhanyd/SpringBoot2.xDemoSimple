@@ -1,4 +1,4 @@
-package com.canaan.common.util;
+package com.zhanyd.app.common.util;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -22,8 +22,8 @@ import java.util.Date;
 public final class JwtUtils {
 
     private static Logger logger = LoggerFactory.getLogger(JwtUtils.class);
-    private static final String SECRET = "canaan";
-    private static final String ISS = "canaan";
+    private static final String SECRET = "zhanyd";
+    private static final String ISS = "zhanyd";
 
     private JwtUtils() {
 
