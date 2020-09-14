@@ -1,10 +1,6 @@
 package com.zhanyd.app.common.util;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import org.slf4j.Logger;
@@ -18,23 +14,17 @@ public class HttpService {
 	private static int connectTimeout=25000;
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(HttpService.class);
+
 	/**
-	 * <p>
 	 * POST方法
-	 * </p>
-	 * 
 	 * @param sendUrl
-	 *            ：访问URL
-	 * @param paramStr
-	 *            ：参数串
-	 * @param backEncodType
-	 *            ：返回的编码
+	 * @param sendParam
 	 * @return
 	 */
 	public static String post(String sendUrl, String sendParam) {
 
 		StringBuffer receive = new StringBuffer();
-		DataOutputStream dos = null;
+		BufferedWriter dos = null;
 		BufferedReader rd = null;
 		HttpURLConnection URLConn = null;
 		LOGGER.info("sendUrl = " + sendUrl + " sendParam = " + sendParam);
@@ -54,10 +44,10 @@ public class HttpService {
 
 			URLConn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
 
-			if (sendParam!=null && sendParam.length()>0) {
+			if (sendParam != null && sendParam.length() > 0) {
 				URLConn.setRequestProperty("Content-Length", String.valueOf(sendParam.getBytes().length));
-				dos = new DataOutputStream(URLConn.getOutputStream());
-				dos.writeBytes(sendParam);
+				dos = new BufferedWriter(new OutputStreamWriter(URLConn.getOutputStream(), "UTF-8"));
+				dos.write(sendParam);
 				dos.flush();
 			}
 
@@ -91,10 +81,15 @@ public class HttpService {
 		}
 
 		String content = receive.toString();
-		LOGGER.info("content = "+content);
+		LOGGER.info("receiveContent = " + content);
 		return content;
 	}
 
+	/**
+	 * GET法
+	 * @param sendUrl
+	 * @return
+	 */
 	public static String get(String sendUrl) {
 
 		StringBuffer receive = new StringBuffer();
@@ -131,7 +126,9 @@ public class HttpService {
 
 		}
 
-		return receive.toString();
+		String content = receive.toString();
+		LOGGER.info("receiveContent = " + content);
+		return content;
 	}
 
 	public static String post(String sendUrl) {
