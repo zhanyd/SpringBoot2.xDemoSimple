@@ -7,12 +7,12 @@ import org.slf4j.LoggerFactory;
  *
  * @author zhanyd
  */
-public final class Md5Generate {
+public final class MD5Generate {
     private static final Integer MD5_LENGTH = 16;
     public static final String CHARSET = "UTF-8";
-    private static Logger logger = LoggerFactory.getLogger(Md5Generate.class);
+    private static Logger logger = LoggerFactory.getLogger(MD5Generate.class);
 
-    private Md5Generate() {
+    private MD5Generate() {
 
     }
     public static String getMD5(byte[] source) {

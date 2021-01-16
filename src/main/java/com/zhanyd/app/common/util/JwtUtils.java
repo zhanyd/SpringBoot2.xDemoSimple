@@ -22,8 +22,8 @@ import java.util.Date;
 public final class JwtUtils {
 
     private static Logger logger = LoggerFactory.getLogger(JwtUtils.class);
-    private static final String SECRET = "canaan";
-    private static final String ISS = "canaan";
+    private static final String SECRET = "zhanyd";
+    private static final String ISS = "zhanyd";
 
     private JwtUtils() {
 
