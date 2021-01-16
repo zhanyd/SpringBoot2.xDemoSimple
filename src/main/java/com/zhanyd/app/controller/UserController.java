@@ -1,14 +1,7 @@
 package com.zhanyd.app.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.zhanyd.app.common.ApiResult;
-import com.zhanyd.app.common.ResultEnum;
-import com.zhanyd.app.common.WeixinHelper;
-import com.zhanyd.app.common.util.HttpService;
 import com.zhanyd.app.common.util.JwtUtils;
-import com.zhanyd.app.common.util.Md5Generate;
-import com.zhanyd.app.common.util.StringHelp;
-import com.zhanyd.app.model.IdentifyingCode;
 import com.zhanyd.app.model.UserInfo;
 import com.zhanyd.app.service.IdentifyingCodeService;
 import com.zhanyd.app.service.UserService;
