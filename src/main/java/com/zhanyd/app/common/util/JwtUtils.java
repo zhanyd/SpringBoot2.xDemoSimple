@@ -1,4 +1,4 @@
-package com.canaan.common.util;
+package com.zhanyd.app.common.util;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;

@@ -6,7 +6,7 @@ import com.zhanyd.app.common.ResultEnum;
 import com.zhanyd.app.common.WeixinHelper;
 import com.zhanyd.app.common.util.HttpService;
 import com.zhanyd.app.common.util.JwtUtils;
-import com.zhanyd.app.common.util.MD5Generate;
+import com.zhanyd.app.common.util.Md5Generate;
 import com.zhanyd.app.common.util.StringHelp;
 import com.zhanyd.app.model.IdentifyingCode;
 import com.zhanyd.app.model.UserInfo;

@@ -2,7 +2,6 @@ package com.zhanyd.app.common.interceptor;
 
 import com.alibaba.fastjson.JSON;
 import com.zhanyd.app.common.ApiResult;
-import com.zhanyd.app.common.ResultEnum;
 import com.zhanyd.app.common.util.JwtUtils;
 import com.zhanyd.app.common.util.StringHelp;
 
