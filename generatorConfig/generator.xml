@@ -20,10 +20,10 @@
 		<sqlMapGenerator targetPackage="com.zhanyd.app.mapping" targetProject="MAVEN"/>
 		<javaClientGenerator targetPackage="com.zhanyd.app.mapper" targetProject="MAVEN" type="XMLMAPPER" />
 
-		<table tableName="plan_complete" domainObjectName="PlanComplete" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
-		<!-- <table tableName="user_info" domainObjectName="UserInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
-		<table tableName="user_role" domainObjectName="UserRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
-		<table tableName="identifying_code" domainObjectName="IdentifyingCode" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/> -->
+		<table catalog="canaan_reports" tableName="plan_complete" domainObjectName="PlanComplete" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
+		<!-- <table catalog="canaan_reports" tableName="user_info" domainObjectName="UserInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
+		<table catalog="canaan_reports" tableName="user_role" domainObjectName="UserRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
+		<table catalog="canaan_reports" tableName="identifying_code" domainObjectName="IdentifyingCode" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/> -->
       
 	</context>
 </generatorConfiguration>
