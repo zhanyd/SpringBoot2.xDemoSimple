@@ -23,5 +23,6 @@ spring:
 fileUpload:
   #rootPath: D:/upload/file   #windows
   #rootPath: /usr/local/file               #linux
-    
-    
+
+swagger:
+  enable: true
