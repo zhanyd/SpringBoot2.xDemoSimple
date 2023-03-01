@@ -6,7 +6,6 @@ import com.zhanyd.app.model.UserInfo;
 import com.zhanyd.app.service.IdentifyingCodeService;
 import com.zhanyd.app.service.UserService;
 
-import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +35,6 @@ public class UserController {
     @Autowired
     IdentifyingCodeService identifyingCodeService;
 
-    @ApiOperation(value = "小程序登录接口")
     @GetMapping("/login")
     public ApiResult<Map<String, Object>> login(String code,HttpServletRequest request){
     	logger.info("微信登录：");
@@ -91,8 +89,5 @@ public class UserController {
             return apiResult.success(resultMap);
         }
     }
-    
-    
-   
 
 }
